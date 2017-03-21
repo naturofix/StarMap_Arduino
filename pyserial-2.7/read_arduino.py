@@ -10,17 +10,17 @@ from starmap_arduino import serial_dic
 print serial_dic.keys()
 
 #serial_dic = {}
-print_list = ['Current time','Battery Voltage','LST','Sunrise','Sunset']
+print_list = ['Current time','Battery Voltage','LST'}
+
+static_list = ['Sunrise','Sunset']
 n = 0
 while True:
 	n += 1
-
 	read_line = ser.readline()
-	#print read_line
+	#print read_line.strip()
 	read_line_list = read_line.replace('\r\n','').split(' : ')
 	if len(read_line_list) > 1:
 		#print read_line_list
-		#print '%s : %s' %(read_line_list[0],read_line_list[1])
 		if read_line_list[0] not in serial_dic.keys():
 			serial_dic[read_line_list[0]] = [read_line_list[1]]
 		else:
@@ -35,9 +35,14 @@ while True:
 	#else:
 	#	print read_line.strip()
 
-	if n % 10000 == 0:
+	if n % 100 == 0:
+		print '\n_____________________________'
 		print serial_dic.keys()
 		print len(serial_dic[serial_dic.keys[0]])
+		for key in static_list:
+			print '%s : %s' %(entry,serial_dic[entry][-1])
+		print '________________________________\n'
+
 
 
 		write_line = 'serial_dic = %s' %serial_dic
