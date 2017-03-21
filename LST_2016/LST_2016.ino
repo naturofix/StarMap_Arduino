@@ -354,7 +354,7 @@
     int CRU = 47;
     int ORI = 49;
     
-    int SUN = 51;
+    int SUN = PSC;
     
     int LAMP = 22;
     
@@ -727,7 +727,7 @@ void loop () {
        if(ORI_vis == 1){digitalWrite(ORI, HIGH);}
        //Serial.println("CRUX always UP");
        digitalWrite(CRU, HIGH);
-       digitalWrite(SUN, HIGH);
+       digitalWrite(SUN, LOW);
        
       delayMicroseconds(led_on);
       digitalWrite(ARI, LOW);
