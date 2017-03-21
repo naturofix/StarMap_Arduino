@@ -39,7 +39,7 @@ while True:
 	if n % 100 == 0:
 		print '\n_____________________________'
 		for key in serial_dic.keys():
-			print '%s\t:\t%s\t:\t%s' %(key,serial_dic[key][-1],len(serial_dic[key]))
+			print '%15s\t:\t%18s\t:\t%s' %(key,serial_dic[key][-1],len(serial_dic[key]))
 		
 		#for key in static_list:
 		#	print '%s : %s' %(entry,serial_dic[key][-1])
