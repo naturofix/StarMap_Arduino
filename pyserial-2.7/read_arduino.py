@@ -14,11 +14,13 @@ print_list = ['Current time','Battery Voltage','LST','Sunrise','Sunset']
 n = 0
 while True:
 	n += 1
+
 	read_line = ser.readline()
-	#print read_line.strip()
+	#print read_line
 	read_line_list = read_line.replace('\r\n','').split(' : ')
 	if len(read_line_list) > 1:
 		#print read_line_list
+		#print '%s : %s' %(read_line_list[0],read_line_list[1])
 		if read_line_list[0] not in serial_dic.keys():
 			serial_dic[read_line_list[0]] = [read_line_list[1]]
 		else:
