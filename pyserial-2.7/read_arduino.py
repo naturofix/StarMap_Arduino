@@ -14,7 +14,7 @@ n = 0
 while True:
 	n += 1
 	read_line = ser.readline()
-	print read_line
+	#print read_line
 	read_line_list = read_line.replace('\r\n','').split(' : ')
 	if len(read_line_list) > 1:
 		#print read_line_list
@@ -24,10 +24,11 @@ while True:
 			serial_dic[read_line_list[0]].append(read_line_list[1].replace('\n',''))
 		if read_line_list[0] in print_list:
 			print read_line_list[1]
-	print n
+	#print n
 
 	if n % 10000 == 0:
 		print serial_dic.keys()
+		print len(serial_dic[serial_dic.keys[0]])
 
 
 		write_line = 'serial_dic = %s' %serial_dic
