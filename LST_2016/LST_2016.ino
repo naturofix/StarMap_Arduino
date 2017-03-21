@@ -537,7 +537,7 @@ void loop () {
         Serial.println(JD0);
         Serial.print("LST : ");
         Serial.println(LST);
-        Serial.print("sunrise : ");
+        Serial.print("Sunrise : ");
         Serial.println(LST_sun_rise);
         Serial.println();
         Serial.print("Sunset : ");
