@@ -9,7 +9,7 @@ ser = serial.Serial('/dev/tty.usbmodem1d11',57600)
 from starmap_arduino import serial_dic 
 
 #serial_dic = {}
-
+print_list = ['Current time','Battery Voltage']
 n = 0
 while True:
 	n += 1
@@ -17,13 +17,16 @@ while True:
 	print read_line
 	read_line_list = read_line.replace('\r\n','').split(' : ')
 	if len(read_line_list) > 1:
-		print read_line_list
+		#print read_line_list
 		if read_line_list[0] not in serial_dic.keys():
 			serial_dic[read_line_list[0]] = [read_line_list[1]]
 		else:
 			serial_dic[read_line_list[0]].append(read_line_list[1].replace('\n',''))
+		if read_line_list[0] in print_list:
+			print read_line_list[1]
 	print n
-	if n % 10 == 0:
+
+	if n % 10000 == 0:
 		print serial_dic.keys()
 
 
