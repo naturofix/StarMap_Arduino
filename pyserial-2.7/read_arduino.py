@@ -15,7 +15,7 @@ n = 0
 while True:
 	n += 1
 	read_line = ser.readline()
-	print read_line.strip()
+	#print read_line.strip()
 	read_line_list = read_line.replace('\r\n','').split(' : ')
 	if len(read_line_list) > 1:
 		#print read_line_list
