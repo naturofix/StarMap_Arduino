@@ -26,10 +26,12 @@ while True:
 		if read_line_list[0] in print_list:
 			if read_line_list[0] == print_list[0]:
 				print '\n'
-				print serial_dic.keys()
-				print '\n'
+				#print serial_dic.keys()
+				#print '\n'
 			print '%s : %s' %(read_line_list[0],read_line_list[1])
 	#print n
+	else:
+		print read_line.strip()
 
 	if n % 10000 == 0:
 		print serial_dic.keys()
