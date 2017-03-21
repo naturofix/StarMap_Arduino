@@ -10,7 +10,7 @@ from starmap_arduino import serial_dic
 print serial_dic.keys()
 
 #serial_dic = {}
-print_list = ['Current time','Battery Voltage','LST'}
+print_list = ['Current time','Battery Voltage','LST']
 
 static_list = ['Sunrise','Sunset']
 n = 0
@@ -28,6 +28,7 @@ while True:
 		if read_line_list[0] in print_list:
 			if read_line_list[0] == print_list[0]:
 				print '\n'
+				print n
 				#print serial_dic.keys()
 				#print '\n'
 			print '%s : %s' %(read_line_list[0],read_line_list[1])
@@ -37,10 +38,12 @@ while True:
 
 	if n % 100 == 0:
 		print '\n_____________________________'
-		print serial_dic.keys()
-		print len(serial_dic[serial_dic.keys[0]])
-		for key in static_list:
-			print '%s : %s' %(entry,serial_dic[entry][-1])
+		for key in serial_dic.keys():
+			print '%s\t:\t%s\t:\t%s' %(key,serial_dic[key][-1],len(serial_dic[key]))
+		
+		#for key in static_list:
+		#	print '%s : %s' %(entry,serial_dic[key][-1])
+		#print len(serial_dic[key])
 		print '________________________________\n'
 
 
