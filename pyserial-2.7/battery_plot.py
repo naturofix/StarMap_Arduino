@@ -22,6 +22,12 @@ voltage = serial_dic['Battery Voltage']
 voltage = [line.strip() for line in voltage]
 voltage = np.array(voltage).astype(np.float)
 
+entry_length = min([len(voltage),len(time)])
+print entry_length
+time = time[:entry_length]
+voltage = voltage[:entry_length]
+#raw_input()
+
 print voltage
 print tdelta
 
