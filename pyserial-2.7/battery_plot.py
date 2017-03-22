@@ -15,8 +15,7 @@ print serial_dic['Current time'][-1]
 time = serial_dic['Current time']
 time = [line.strip() for line in time]
 time = [datetime.strptime(line,'%Y/%m/%d %H:%M:%S') for line in time]
-tdelta =[line-time[0] for line in time]
-tdelta = np.array([line.seconds/60 for line in tdelta]) #duration in min
+
 
 voltage = serial_dic['Battery Voltage']
 voltage = [line.strip() for line in voltage]
@@ -27,6 +26,9 @@ print entry_length
 time = time[:entry_length]
 voltage = voltage[:entry_length]
 #raw_input()
+
+tdelta =[line-time[0] for line in time]
+tdelta = np.array([line.seconds/60 for line in tdelta]) #duration in min
 
 print voltage
 print tdelta
