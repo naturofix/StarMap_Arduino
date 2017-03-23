@@ -28,8 +28,8 @@ voltage = voltage[:entry_length]
 #raw_input()
 
 tdelta =[line-time[0] for line in time]
-tdelta = np.array([line.seconds/60 for line in tdelta]) #duration in min
-
+#tdelta = np.array([line.seconds/60 for line in tdelta]) #duration in min
+tdelta = np.array([line.days*1440+line.seconds/60 for line in tdelta]) #duration in min
 print voltage
 print tdelta
 
@@ -46,7 +46,7 @@ ax[1].set_xlabel('Time')
 ax[1].set_ylabel('Voltage (V)')
 plt.tight_layout()
 plt.savefig('Batter_voltage_plot.png') # uncomment this if you want to save the plot
-#plt.show()
+plt.show()
 
 
 
